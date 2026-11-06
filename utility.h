@@ -6,5 +6,6 @@ namespace utils {
     void tokenizerMenu();
     void editorShellMenu();
     void dirSearchMenu();
+    bool stringControl(std::string inputString);
 }
 #endif

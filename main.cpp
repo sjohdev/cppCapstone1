@@ -36,6 +36,8 @@ int main() {
         std::cin.clear();
         std::cin.ignore(10000,'\n');
         
+        std::cout << "======================================" << std::endl;
+        
         // Run selected program
         switch (progSelect) {
             case 1: 

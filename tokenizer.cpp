@@ -15,7 +15,6 @@ namespace utils {
             std::cout << "Error: cin failed. Exiting" << std::endl;
             assert(1==0); // forced exit
         }
-        std::cout << "String: " << inputString << std::endl;
         
         // initialize word lists:
         const int numChars = inputString.length();
@@ -39,7 +38,7 @@ namespace utils {
                 // End of word detected: store word in list and set new startindex
                 wordLength = i - startIndex;
                 if (wordLength > 0) {
-                    // word has to be at least 1 characters long
+                    // word has to be at least 2 characters long
                     if (isEoString) {
                         wordLengthList[wordIndex] = wordLength + 1;
                     } else {
@@ -54,7 +53,7 @@ namespace utils {
         }
         numWords = wordIndex;
         //int wordIncrement = wordLength - 1; 
-        std::cout << "String has  " << numWords << " words: " << std::endl;
+        std::cout << "String has " << numWords << " words: " << std::endl;
         
         // Print all words separately: 
         for (int j = 0; j < numWords; j++) {
