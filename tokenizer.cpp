@@ -8,8 +8,6 @@ namespace utils {
         std::string inputString;
         
         // User prompt
-        std::cout << "size of string: " << sizeof(inputString) << std::endl;
-        std::cout << "size of int: " << sizeof(int) << std::endl;
         std::cout << "Tokenizer. " << std::endl; 
         std::cout << "Please enter text to be tokenized: ";
         std::getline(std::cin, inputString);
