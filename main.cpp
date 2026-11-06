@@ -32,6 +32,10 @@ int main() {
         }
         assert(isValidSelection);
         
+        // Flush input buffer before running programs: 
+        std::cin.clear();
+        std::cin.ignore(10000,'\n');
+        
         // Run selected program
         switch (progSelect) {
             case 1: 
@@ -52,7 +56,7 @@ int main() {
         }
         
         // Ask if user wants to run another program
-        std::cout << "Run another program (y/n)?: ";
+        std::cout << "Run another program (y/n)?: " << std::endl;
         std::cin >> newloopYesNo;
         // Make sure cin did not crash and if so handle the error
         if (std::cin.fail()) {
