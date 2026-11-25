@@ -1,0 +1,3 @@
+/home/badblob/coding/cppdev/cppCapstone1/build/CMakeFiles/cap1.dir
+/home/badblob/coding/cppdev/cppCapstone1/build/CMakeFiles/edit_cache.dir
+/home/badblob/coding/cppdev/cppCapstone1/build/CMakeFiles/rebuild_cache.dir

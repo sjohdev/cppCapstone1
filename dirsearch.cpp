@@ -3,9 +3,20 @@
 #include <cstdlib>
 #include <fstream>
 #include <cassert>
+#include "utility.h"
 
-namespace utils {
-    bool stringControl(std::string inputString) {
+namespace Utils {
+    
+    void getUserStr(const std::string& prompt, std::string& targetStr) {
+        std::cout << prompt;
+        std::getline(std::cin, targetStr);
+        if (std::cin.fail()) {
+            std::cout << "Error: cin failed. Exiting" << std::endl;
+            assert(1==0); // forced exit
+        }
+    }
+
+    bool stringControl(const std::string& inputString) {
         // Initialize variables
         const int numChars = inputString.length();
         int ascii = 0;
@@ -37,32 +48,17 @@ namespace utils {
         
         // User prompt 1: directory 
         std::cout << "Directory Search." << std::endl;
-        std::cout << "Please enter directory path (./ for current dir): ";
-        std::getline(std::cin, targetDir);
-        if (std::cin.fail()) {
-            std::cout << "Error: cin failed. Exiting" << std::endl;
-            assert(1==0); // forced exit
-        }
+        getUserStr("Please enter directory path (./ for current dir): ", targetDir);
         
         // User prompt 2: filename 
-        std::cout << "Please enter full filename (*.ext for all files with extension 'ext'): ";
-        std::getline(std::cin, fullFilename);
-        if (std::cin.fail()) {
-            std::cout << "Error: cin failed. Exiting" << std::endl;
-            assert(1==0); // forced exit
-        }
+        getUserStr("Please enter full filename (*.ext for all files with extension 'ext'): ", fullFilename);
         
         // Perform rigorous input checking to block any injection attempts
         if (stringControl(targetDir) && stringControl(fullFilename)) {
             // If inputs are OK, proceed
             // Call bash find method and store result in logfile: 
             const std::string searchCommand = "find " + targetDir + " -name '" + fullFilename + "'" + " > cpplog.txt";
-            // Make sure system process is available
-            bool procReady = not(std::system(nullptr) == 0);
-            if (procReady) {
-                // Run search command using the Unix terminal
-                std::system(searchCommand.c_str());
-            }
+            runSysCommand(searchCommand);
             
             // Confirm user input, search command, and search result: 
             std::cout << "Directory: " << targetDir << std::endl;

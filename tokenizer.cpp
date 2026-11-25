@@ -1,20 +1,16 @@
 #include <iostream>
 #include <string>
 #include <cassert>
+#include "utility.h"
 
-namespace utils {
+namespace Utils {
     void tokenizerMenu() {
         // Initialize input variable
         std::string inputString;
         
         // User prompt
-        std::cout << "Tokenizer. " << std::endl; 
-        std::cout << "Please enter text to be tokenized: ";
-        std::getline(std::cin, inputString);
-        if (std::cin.fail()) {
-            std::cout << "Error: cin failed. Exiting" << std::endl;
-            assert(1==0); // forced exit
-        }
+        std::cout << "Tokenizer. " << std::endl;
+        getUserStr("Please enter text to be tokenized: ", inputString);
         
         // initialize word lists:
         const int numChars = inputString.length();

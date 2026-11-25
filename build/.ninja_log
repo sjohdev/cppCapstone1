@@ -1,0 +1,7 @@
+# ninja log v7
+1	1164	1795627954750547076	CMakeFiles/cap1.dir/main.cpp.o	cdb0809fc0745c36
+2	1345	1795627954751041848	CMakeFiles/cap1.dir/bmi.cpp.o	4f0b674a9d040f5d
+2	1418	1795627954751350821	CMakeFiles/cap1.dir/dirsearch.cpp.o	1d96966f76010afd
+4	1450	1795627954752547123	CMakeFiles/cap1.dir/tokenizer.cpp.o	b46eb5ce47f27397
+3	1830	1795627954751547099	CMakeFiles/cap1.dir/editorshell.cpp.o	38b0fd6a685afead
+1831	1924	1795627956579590204	cap1	bf3aea83ab78e63

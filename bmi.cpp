@@ -2,7 +2,7 @@
 #include <cassert>
 #include <iomanip>  // For formatting output
 
-namespace utils {
+namespace Utils {
     void bmiMenu() {
         // Initialize variables
         float weightKg = 0.0;
