@@ -3,6 +3,12 @@
 #include <iomanip>  // For formatting output
 
 namespace Utils {
+
+    float calcBmi(float& weightKg, float& heightM) {
+        float bmi = weightKg / (heightM * heightM);
+        return bmi;
+    }
+
     void bmiMenu() {
         // Initialize variables
         float weightKg = 0.0;
@@ -26,7 +32,7 @@ namespace Utils {
         // Making sure the divisor is not close to zero:
         if (heightM > 0.01 || heightM < -0.01) {
             std::cout << std::fixed << std::setprecision(1); // One decimal in result
-            std::cout << "Your BMI = " <<  weightKg / (heightM * heightM) << std::endl;     
+            std::cout << "Your BMI = " <<  calcBmi(weightKg, heightM) << std::endl;     
         } else {
             std::cout << "Error: Close to dividing by zero. Exiting" << std::endl;
         }

@@ -2,6 +2,7 @@
 #ifndef UTILITY_H
 #define UTILITY_H
 namespace Utils {
+    float calcBmi(float& weightKg, float& heightM);
     void bmiMenu();
     void tokenizerMenu();
     void editorShellMenu();

@@ -1,0 +1,17 @@
+{
+  "tests": 1,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "calcBmiTest",
+      "tests": 1,
+      "testsuite": [
+        {
+          "name": "calculatesBmi",
+          "file": "\/home\/badblob\/coding\/cppdev\/cppCapstone1\/tests\/BmiTest.cpp",
+          "line": 4
+        }
+      ]
+    }
+  ]
+}

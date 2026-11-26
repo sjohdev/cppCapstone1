@@ -9,3 +9,15 @@ add_executable(cap1
     tokenizer.cpp
 )
 
+include(CTest)
+find_package(GTest REQUIRED)
+add_executable(unit_tests 
+    tests/BmiTest.cpp
+    bmi.cpp
+)
+
+target_link_libraries(unit_tests
+    GTest::gtest_main    
+)
+include(GoogleTest)
+gtest_discover_tests(unit_tests)

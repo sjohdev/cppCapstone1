@@ -1,0 +1,2 @@
+calcBmiTest.calculatesBmi 1 0.00302882
+---
